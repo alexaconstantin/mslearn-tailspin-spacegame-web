@@ -13,12 +13,12 @@ variables:
 
 steps:
 - task: DotNetCoreInstaller@0
-  displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
+  displayName: 'Use .NET Core SDK $(dotnetSdkVersion) - build-pipeline'
   inputs:
     version: '$(dotnetSdkVersion)'
 
 - task: Npm@1
-  displayName: 'Run npm install'
+  displayName: 'Run npm install - '
   inputs:
     verbose: false
 
@@ -26,7 +26,7 @@ steps:
   displayName: 'Compile Sass assets'
 
 - task: gulp@1
-  displayName: 'Run gulp tasks'
+  displayName: 'Run gulp tasks - build-pipeline'
 
 - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
   displayName: 'Write build info'
