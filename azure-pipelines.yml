@@ -42,6 +42,7 @@ steps:
     command: 'restore'
     restoreSolution: '**/*.sln'
     feedsToUse: 'select'
+    nuGetFeedType: 'internal'
     vstsFeed: 'alexaconstantin'
 
 - task: DotNetCoreCLI@2
